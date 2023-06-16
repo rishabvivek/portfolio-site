@@ -1,6 +1,6 @@
 .fade-in {
   opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 2s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -16,4 +16,65 @@
 .hidden {
   opacity: 0;
   transition: opacity 0.3s ease-out;
+}
+
+
+.typewriter-line {
+  margin-top: 10px;
+  border: none;
+  border-top: 2px solid #000;
+  width: 0;
+  animation: underline 2s ease-out forwards;
+}
+
+@keyframes underline {
+  0% {
+    width: 0;
+    transform: translateX(-50%);
+  }
+  50% {
+    width: 21%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 21%;
+    transform: translateX(0);
+  }
+}
+
+.circle-glow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 1px;
+  z-index: -1;
+
+}
+
+.circle-glow::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  opacity: 27.5%;
+  border-radius: 50%;
+  background-color: #0ff;
+  box-shadow: 0 0 1px 1px #0ff, 0 0 80px 100px #0ff;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow:0 0 80px 100px #0ff, 0 0 100px 120px #f0f;
+  }
+  50% {
+    box-shadow:0 0 100px 120px #0ff, 0 0 120px 140px #f0f;
+  }
+  100% {
+    box-shadow: 0 0 80px 100px #0ff, 0 0 100px 120px #f0f;
+  }
 }
