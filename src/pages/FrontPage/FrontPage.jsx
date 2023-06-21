@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { Navbar, NavbarBrand, Image, NavbarContent, NavbarItem} from '@nextui-org/react'
-import { Link } from 'react-router-dom';
 import '/src/App.css';
 import Typewriter from "typewriter-effect";
-
+import * as THREE from 'three';
 
 function FrontPage() {
 
@@ -37,13 +36,17 @@ function FrontPage() {
     return () => clearInterval(intervalId);
   }, [radius, speed]);
 
+ 
+
+
+
   return (
-    <div>
+    <div className="h-screen bg-white">
         <motion.div className={`${fadeIn ? 'circle-glow fade-in' : ''}`} style={{ x, y }} />
         <div className={`main flex flex-col justify-center items-center h-screen mt-[-5vw] text-5xl select-none`}>
             <Typewriter
             onInit={(typewriter) => {
-                typewriter
+                typewriter 
                     .changeDeleteSpeed(10)
                     .pauseFor(1000)
                     .typeString("Hi")

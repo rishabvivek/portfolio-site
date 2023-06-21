@@ -60,7 +60,7 @@
   left: -10px;
   right: -10px;
   bottom: -10px;
-  opacity: 27.5%;
+  opacity: 20%;
   border-radius: 50%;
   background-color: #0ff;
   box-shadow: 0 0 1px 1px #0ff, 0 0 80px 100px #0ff;
@@ -77,4 +77,9 @@
   100% {
     box-shadow: 0 0 80px 100px #0ff, 0 0 100px 120px #f0f;
   }
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
 }

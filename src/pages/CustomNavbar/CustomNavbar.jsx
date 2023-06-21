@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { Navbar, NavbarBrand, Image, NavbarContent, NavbarItem} from '@nextui-org/react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import '/src/App.css';
-import Typewriter from "typewriter-effect";
 
 
 function CustomNavbar() {
@@ -21,12 +20,12 @@ function CustomNavbar() {
     }, []);
 
     return (
-        <div className={`flex rounded-sm border-transparent h-20`}>
-        <Navbar isBlurred className={`flex ${fadeIn ? 'fade-in' : 'hidden'}`} maxWidth='full' position="sticky" classNames={{
+        <div className={`flex rounded-sm border-transparent h-20 bg-white/75`}>
+        <Navbar className={`flex ${fadeIn ? 'fade-in' : 'hidden'}`} maxWidth='full' position="sticky" classNames={{
     base: "anytailwindstyles",
     wrapper: "overflow-hidden",}}>
           <NavbarBrand className="flex">
-          <Link to="." onClick={handleRefresh}>
+          <Link to="frontpage" smooth = {true} duration = {500}>
             <motion.img
                 initial={{ translateY: 0 }}
                 animate={{ translateY: [-3, 0, -3] }}
