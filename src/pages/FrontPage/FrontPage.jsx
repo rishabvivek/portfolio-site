@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
-import { Navbar, NavbarBrand, Image, NavbarContent, NavbarItem} from '@nextui-org/react'
 import '/src/App.css';
 import Typewriter from "typewriter-effect";
-import * as THREE from 'three';
 
 function FrontPage() {
 
-    const [fadeIn, setFadeIn] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
 
   const handleRefresh = () => {
     window.location.reload();

@@ -83,3 +83,28 @@
   height: 100vh;
   overflow-y: scroll;
 }
+
+.xray-circle {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid white;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+}
+.transparent {
+  background-color: transparent;
+}
+
+.hovered-text {
+  color: black;
+}
+
+.scalable-text {
+  white-space: nowrap; /* Prevent text wrapping mid-word */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Display an ellipsis (...) if the text overflows the container */
+}

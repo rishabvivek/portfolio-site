@@ -5,6 +5,7 @@ import { Link } from 'react-scroll';
 import '/src/App.css';
 
 
+
 function CustomNavbar() {
 
     const [fadeIn, setFadeIn] = useState(false);
@@ -20,10 +21,8 @@ function CustomNavbar() {
     }, []);
 
     return (
-        <div className={`flex rounded-sm border-transparent h-20 bg-white/75`}>
-        <Navbar className={`flex ${fadeIn ? 'fade-in' : 'hidden'}`} maxWidth='full' position="sticky" classNames={{
-    base: "anytailwindstyles",
-    wrapper: "overflow-hidden",}}>
+      <div className={`flex rounded-sm border-transparent h-20 bg-white`}>
+        <Navbar className={`flex ${fadeIn ? 'fade-in' : 'hidden'}`} maxWidth='full' position="sticky">
           <NavbarBrand className="flex">
           <Link to="frontpage" smooth = {true} duration = {500}>
             <motion.img
@@ -37,11 +36,11 @@ function CustomNavbar() {
           <p className={`font-extrabold text-zinc-700 text-l ml-6 select-none`}> RISHAB VIVEK</p>
           </NavbarBrand>
 
-          <NavbarContent className='md:flex space-x-12' justify='end'>
-            <NavbarItem as={Link} color="foreground" href="/">Projects</NavbarItem>
-            <NavbarItem as={Link} color="foreground" href="#">Work Experience</NavbarItem>
+          <NavbarContent className='md:flex space-x-12 select-none' justify='end'>
+            <NavbarItem as={Link} color="foreground"  to = "window-page" smooth = {true} duartion = {500}>Projects</NavbarItem>
+            {/* <NavbarItem as={Link} color="foreground" href="#">Work Experience</NavbarItem>
             <NavbarItem as={Link} color="foreground" href="#">Skills</NavbarItem>
-            <NavbarItem as={Link} color="foreground" href="#">Contact</NavbarItem>
+            <NavbarItem as={Link} color="foreground" href="#">Contact</NavbarItem> */}
           </NavbarContent>
         </Navbar>
       </div>
