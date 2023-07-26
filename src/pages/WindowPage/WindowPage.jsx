@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import '/src/App.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 function WindowPage() {
   // Replace this projects array with your own project data
+
   const projects = [
-    { title: 'HYOU', header: '"An ML powered site that provides a color based visual based on the emotions evoked by a song"', image: "src/assets/hyou.gif" , url: "https://github.com/rishabvivek/hyou",  image2: '',
+    { title: 'HYOU', header: '"An ML powered site that provides a color based visual based on the emotions evoked by a song"', image: "/hyou.gif" , url: "https://github.com/rishabvivek/hyou",  image2: '', github : 'githubimg',
     description: 'HYOU is a website that takes any song name as an input and will return, at most, 2 emotions that are evoked by the song. I came up with this project when observing the Nanoleaf lights that I own react to the music I played.' +
     ' For those who do not know, Nanoleaf are "smart lights" or IOT devices that can be arranged on a wall in various ways and display any color pattern that you can choose from the app.' +
     ' The app also provides an option to allow the lights to react to music. As an avid listener to music I tried this feature and saw that the lights only reacted to the rhythm of the song, but did not change colors based on the type of song I played.' +
@@ -19,13 +21,13 @@ function WindowPage() {
 ' Classifying emotions is difficult and a very subjective task, therefore I was quite happy with these results. To finish the project I connected the back-end ML model with the front-end, where I used the emotions returned by the back-end to create a simple color based visual.' +
 ' This project was very fun to do because I was able to create a cool product for something that I care deeply for - music. I do not think this project is fully finished.' +
 ' I believe I can continue building off what I have created so far. My goal is t refine the ML model and integrate this with IOT devices such as Nanoleaf such that when I play music using these smart lights, the colors will adapt based on the emotions of the song.'},
-    { title: 'MOCK MERCH SITE', header: '"A mock e-commerce site utilizing Stripe API"', image: 'src/assets/riot-mock-site.gif', url:'https://github.com/rishabvivek/riot_merch_mock_website',  image2: '',
+    { title: 'MOCK MERCH SITE', header: '"A mock e-commerce site utilizing Stripe API"', image: '/riot-mock-site.gif', url:'https://github.com/rishabvivek/riot_merch_mock_website',  image2: '', github : 'githubimg',
     
     description: 'I created this mock e-commerce site to enhance my understanding of web development. More importantly I learnt many ways to efficiently web-develop such as creating dynamic pages for the products. '+
     'Since I was developing an e-commerce site, I wanted to learn how sites integrate 3rd party payment systems. Utilizing the popular Stripe API, I learnt about how to customize the use of an API for the needs of my e-commerce site. ' +
     'This included learning how to customize shipping choices, and currencies. Lastly, one big takeaway from this project was learning how to pass and share information through multiple pages. This was a concept I did not understand very well, and completing this e-commerce site has definitely improved my understanding in this area.' 
     },
-    { title: 'MATCHUPS.GG' , header: '"A data analytics website that provides champion matchup information for League of Legends"', image: 'src/assets/matchups.gif', url: 'https://github.com/ThiChing/matchups-gg',  image2: '',
+    { title: 'MATCHUPS.GG' , header: '"A data analytics website that provides champion matchup information for League of Legends"', image: '/matchups.gif', url: 'https://github.com/ThiChing/matchups-gg',  image2: '', github : 'githubimg',
     
     description: 'This project was created by friends and I because we wanted to perform unique data analytics on this game that we all played. I will begin by saying that a lot of the information you see on the GIF on the right is missing because our server is not running anymore.' +
   ' Furthermore, I will also say that not all the code has been completed for each champion page, but the code that you will see in the repo is the base code which successfully represents what we set out to achieve.' +
@@ -35,19 +37,19 @@ function WindowPage() {
   ' We did this by scraping sites such as Reddit and Mobafire, two platforms where we can retrieve insights and data from professionals. This is where the TIPS info would shine, where we can provide users with an all in one sight to find the best matchups, but also tips from professionls with how they can approach them.' +
   ' We ran our codebase using AWS Lambda such that we can perform API requests to our backend. Since we use AWS Lambda, we also utilized DynamoDB as our database, which store information for specific champion matchup. Our backend code simply updates the database for the champion information on a weekly basis.' +
   ' Overall we really enjoyed developing this project. We loved the idea that we can create projects for the things we love doing.'  },
-    { title: 'BRICK BREAKER' , header: '"Recreating a classic game using computer vision methods"', image: 'src/assets/brick_breaker.gif', url: 'https://github.com/rishabvivek/brick_breaker_computer_vision',  image2: '',
+    { title: 'BRICK BREAKER' , header: '"Recreating a classic game using computer vision methods"', image: '/brick_breaker.gif', url: 'https://github.com/rishabvivek/brick_breaker_computer_vision',  image2: '', github : 'githubimg',
     description: 'While watching the promotional video for the Apple Vision Pro, I became extremely interested at how the computer is processing data from hand movements to perform scrolling and selection.' +
   ' I was surprised because hands are a very nuanced appendage. This is purely because we are able to reshape our hands into several different ways. Furthermore, identifying any body part is a complex problem because the computer does not know how to differentiate a "hand" from any other object in its view. Unless we train it. ' +
 ' Interested by all of the complexities that this problem brings I wanted to dip my toes in the water and try to create a basic game which can utilize hand controls. I chose brick breaker because I remember playing this game as a kid using my fathers BlackBerry.' +
 ' I underestimated the difficulty of implementing the hand controlled aspect of this game using a live camera feed. I had to learn several methods of preprocessing to be able to identify only hands in the video. I later realized that if I used TensorFlow instead of PyTorch, there are several libraries that I could have used to train the code to identify hands, however I was limited by my M1 Mac.' +
 ' Regardless of this I still was able to create a relatively good hand tracking system using preprocessing techniques used for computer vision. I then streamed this hand position information to my Brick Breaker game which I built using PyGame. The GIF on the right shows the result of my code. As you can see the controls I made were quite sensitive to hand movement and maybe something I can work on to improve the game.  An idea for a variation of this project might be to develop an unsupervised ML model that can learn to beat this game by itself!' 
 + '' },
-    { title: 'RECEIPT OCR APP', header: '"Scan the bill and choose how to split it, all in an iPhone App!"', image: '', url: 'https://github.com/KKeySimon/ReceiptOCR',  image2: 'src/assets/receiptocr.png',
+    { title: 'RECEIPT OCR APP', header: '"Scan the bill and choose how to split it, all in an iPhone App!"', image: '', url: 'https://github.com/KKeySimon/ReceiptOCR',  image2: '/receiptocr.png', github : 'githubimg',
     description: 'The goal of this app was to allow users a quick an easy way to request money from people when you pay for a meal or groceries. Obviously, the most sensible solution to achieve this goal is to develop an iPhone app, which was designed using React Native.' +
   'The app allows access to use the camera after which the user scans a receipt. In the backend, the code utilizes the Textract library to perform OCR on the receipt and return the respective data. This data is then relayed to the user using the UI where the user can then select how many people to split the cost between, and how to split the cost (the user can choose evenly, or assign items to respective users).' +
 ' After this has been complete the user will be able to send an automated message to the people they need to settle with. This was my first time building an app using React Native - I have built smaller applications using XCode and Swift - and found it to be a great way to build an app considering my expertise with the language. The image on the right shows what it looks like, I could not provide a GIF because I need to run the app on the iPhone to show its full functionality. These photos are from the XCode iPhone 14 Pro Simulator using hard coded data, but you can test the receipt OCR is working through the GitHub Repo' },
 
-    { title: 'DISCORD BOTS', header: '"Creating different bots for a popular and developer friendly messaging and voice chat application"', image: '', url: 'https://github.com/rishabvivek/newsbot',  image2: 'src/assets/newsbot.png',
+    { title: 'DISCORD BOTS', header: '"Creating different bots for a popular and developer friendly messaging and voice chat application"', image: '', url: 'https://github.com/rishabvivek/newsbot',  image2: '/newsbot.png',github : 'githubimg',
     description: 'Discord is one of my most used apps. I find it great for interacting with my friends, while also interacting with a variety of online communities where I can find people with similar interests to mine.' +
   'I also intensely use Discord to join and interact with clubs and classes within my university. Since I interact with this application on a daily basis, I became interested in learning how the Discord bots were made.' +
 ' For those who are unfamiliar with Discord bots, they are essentially programs that a user can add to their channel to perform specific tasks. For example, one may use a bot that automates a message and welcomes new users, while others may use it as a moderator to automatically discipline unwanted behavior in the chat.' +
@@ -55,13 +57,13 @@ function WindowPage() {
 ' Although the GitHub repo link only shows one of the bots I have created I actually have 2 in my profile. The one provided in the link is a NewsBot. The NewsBot works by automatically making API calls every morning at 8 AM, retrieving the general headline news from Google News.' +
 ' The bot the relays this information as text and providing the links to the articles should the user want to read more. On top of this, the bot provides users with reaction options. The reaction options are different news categories such that if the user wants more focused news, say the top sports headlines, then they can react using the appropriate reaction choice under the message.' 
 + ' The second bot I created utilizes the Riot API to allow users to retrieve information about summoners. The bot requires users to type a command along with the summoner name after which the bot retrieves specific data about the summoner including rank, win rate and champions played. Making these bots provide insight as to how the Discord community is built and also makes for a fun, creative coding project!'  },
-    { title: 'SIGN LANGUAGE TRANSLATOR (in progress)', header: '"Using computer vision to live translate sign language into English"', image: '', url: 'https://github.com/rishabvivek/sign-langauge-translator',  image2: 'src/assets/sign-language.png',
+    { title: 'SIGN LANGUAGE TRANSLATOR (in progress)', header: '"Using computer vision to live translate sign language into English"', image: '', url: 'https://github.com/rishabvivek/sign-langauge-translator',  image2: '/sign-language.png',github : 'githubimg',
      description: 'I came up with the project idea after completing the Brick Breaker game (if you have not read this yet I suggest reading it as it gives insight to my interests in computer vision) I decided to expand my knowledge in computer vision by completing a more complex project.' +
     ' As the title says, this project is still in progress, but I found it important to list it because I have made significant progress with regards to its development. So far, I have completed a base version of the ML model that will be essential for the computer to read the hand signs.' +
   ' The ML model was trained and tested using a public Kaggle dataset that had large amounts of image data for the letters in sign language. I chose to use a CNN as my model for this dataset since CNNs are known to be very good for image classification problems.' +
   ' After running the first model I achieved an 87% validation on the test set. I realized that there was significant overfitting in my model, because each of my 10 epochs were returning high validation accuracy, but this was not represented on the test set.' +
 ' To reduce the overfitting, I performed data transformations on the dataset. After doing this I able to reach close to a 0.94 validation accuracy. The next steps are to use this model to distinguish letters based on hand signs shown on the camera feed. '  },
-    { title: 'STELLAR NOTETAKING (in progress)', header: '"A new AI powered notetaking app centered around students"', image: 'src/assets/stellar.gif', url: 'https://github.com/rishabvivek/stellar_notetaking', image2: 'src/assets/stellar_img.png',
+    { title: 'STELLAR NOTETAKING (in progress)', header: '"A new AI powered notetaking app centered around students"', image: '/stellar.gif', url: 'https://github.com/rishabvivek/stellar_notetaking', image2: '/stellar_img.png',github : 'githubimg',
     description: 'This project is my current passion project, which is quite ambitious, and is therefore still in progress. The goal of Stellar is to create a new notetaking app with a focus on improving and optimizing student lives' +
     ' I decided to create this app because I realized that I have not found a useful productivity app that contains features I find essential as a student. I found that popular productivity and notetaking apps, such as Obsidian and Notion, provide general tools for the public to organize and optimize their schedule, but not all these tools are useful or necessary for students.' +
   ' Furthermore, these apps also do not provide specific tools that can improve a students performance at work. My goal with Stellar is to bridge these gaps that current notetaking apps have.' +
@@ -118,6 +120,7 @@ function WindowPage() {
     };
   }, []);
 
+  
   return (
     <div id="window-page" className="h-screen bg-zinc-900 flex flex-col justify-center items-center overflow-hidden">
       <motion.div
@@ -169,7 +172,7 @@ function WindowPage() {
            <div className="flex flex-col items-center w-full bg-zinc-800 rounded-b-md">
             <h2 className="text-4xl font-bold mb-4 text-white mt-4">{projects[selectedProject].title}</h2>
             <h3 className='text-xl  mb-4 italic text-white'> {projects[selectedProject].header}</h3>
-            <a href = {projects[selectedProject].url} target = "_blank" rel="noopener noreferrer" className='mb-4'>  <img src = 'src/assets/github.png' alt = "github" className='w-7 h-7'/> </a>
+            <a href = {projects[selectedProject].url} target = "_blank" rel="noopener noreferrer" className='mb-4'>  <img src = '/github.png' alt = "github" className='w-7 h-7'/> </a>
           </div>
   
           <div className = "flex flex-row items-start">
@@ -207,7 +210,7 @@ function WindowPage() {
               className="absolute top-4 right-8 text-lg font-bold"
               onClick={() => setSelectedProject(null)}
             >
-              <img src = "src/assets/close.png" alt = "close" className='w-8 h-8'/>
+              <img src = '/close.png' className='w-7 h-7' alt='close'/>
             </button>
           </motion.div>
         )}

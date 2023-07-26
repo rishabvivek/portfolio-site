@@ -29,7 +29,7 @@ function CustomNavbar() {
                 initial={{ translateY: 0 }}
                 animate={{ translateY: [-3, 0, -3] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
-                src="src/assets/big-logo.png"
+                src='/big-logo.png'
                 width={25}
               />
           </Link>
